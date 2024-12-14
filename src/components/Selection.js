@@ -28,13 +28,16 @@ export const StatusSelection = () => {
 }
 
 export const PageSelection = () => {
-    const allPages = 9;
-    const [currentPage, setCurrentPage] = useState(1);
-    console.log(currentPage);
+    const allPages = 10;
+    const { rowsPerPage, setRowsPerPage } = usePatientContext();
+
+    const handleChange = (e) => {
+        setRowsPerPage(e.target.value);
+    }
 
     return (
-        <select id="countries" onChange={e => setCurrentPage(e.target.value)} className="w-1/3 h-8 px-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-2xl focus:ring-blue-500 focus:border-blue-500 block">
-            <option value="0" selected>0</option>
+        <select id="countries" onChange={e => handleChange(e)} className="w-1/3 h-8 px-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-2xl focus:ring-blue-500 focus:border-blue-500 block">
+            <option value={rowsPerPage} selected className="bg-[#54BAB9]">{rowsPerPage}</option>
             {Array.from({ length: allPages + 1 }, (_, i) => (
                 <option key={i} value={i}>{i}</option>
             ))}

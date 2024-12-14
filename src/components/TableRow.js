@@ -4,11 +4,7 @@ import Form from './Form';
 import Alert from './Alert';
 
 const TableRow = ({ data }) => {
-    const [confimeDelete, setConfimeDelete] = useState({
-        isOpen: false,
-        isSure: false,
-        patientId: null
-    });
+    const [isAlertDeleteOpen, setIsAlertDeleteOpen] = useState(false);
 
     const [isModalOpen, setisModalOpen] = useState(false);
 
@@ -16,9 +12,7 @@ const TableRow = ({ data }) => {
 
     const handleDelete = () => {
         setIsDropdown(false)
-        setConfimeDelete({ isOpen: true, isSure: false, patientId: data.id })
-        console.log(data.id)
-        console.log(confimeDelete.patientId)
+        setIsAlertDeleteOpen(true)
     }
 
     const handleUpdate = () => {
@@ -85,7 +79,7 @@ const TableRow = ({ data }) => {
             </tr>
             <div>
                 {isModalOpen && <Form setisModalOpen={setisModalOpen} data={data} type="update" />}
-                {confimeDelete.isOpen && <Alert confimeDelete={confimeDelete} setConfimeDelete={setConfimeDelete} id={data.id} />}
+                {isAlertDeleteOpen && <Alert isAlertDeleteOpen={isAlertDeleteOpen} setIsAlertDeleteOpen={setIsAlertDeleteOpen} id={data.id} />}
             </div>
         </>
     )

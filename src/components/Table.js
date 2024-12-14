@@ -4,8 +4,8 @@ import TableRow from './TableRow';
 import moreIcon from '../images/more.png'
 
 const Table = () => {
-    const { allPatientsData } = usePatientContext();
-    const patientsData = allPatientsData();
+    const { readPatientsData } = usePatientContext();
+    const patientsData = readPatientsData();
     return (
         <div class="overflow-x-auto">
             <table class="w-full text-[14px] text-left">
