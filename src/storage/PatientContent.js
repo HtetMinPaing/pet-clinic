@@ -17,6 +17,7 @@ const PatientProvider = ({ children }) => {
   const [status, setStatus] = useState("");
   const [breed, setBreed] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [query, setQuery] = useState("");
 
   const [isToastOpen, setIsToastOpen] = useState("");
 
@@ -41,6 +42,20 @@ const PatientProvider = ({ children }) => {
       const rowFilterData = filteredData.slice(0, rowsPerPage);
       filteredData = rowFilterData;
     }
+
+    filteredData = filteredData.filter((data) => (
+      data.petName.toLowerCase().includes(query.toLowerCase()) ||
+      data.pawrent.toLowerCase().includes(query.toLowerCase()) ||
+      data.status.toLowerCase().includes(query.toLowerCase()) ||
+      data.breed.toLowerCase().includes(query.toLowerCase()) ||
+      data.gender.toLowerCase().includes(query.toLowerCase()) ||
+      data.dateOfBirth.toLowerCase().includes(query.toLowerCase()) ||
+      data.contactPhone.toLowerCase().includes(query.toLowerCase()) ||
+      data.address.toLowerCase().includes(query.toLowerCase()) ||
+      data.city.toLowerCase().includes(query.toLowerCase()) ||
+      data.township.toLowerCase().includes(query.toLowerCase())
+    ))
+
     return filteredData;
   }
 
@@ -70,7 +85,7 @@ const PatientProvider = ({ children }) => {
     return filterData;
   }
   return (
-    <PatientContext.Provider value={{ readPatientsData, addPatient, updatePatient, deletePatient, listByStatus, setStatus, setBreed, isToastOpen, setIsToastOpen, rowsPerPage, setRowsPerPage }}>
+    <PatientContext.Provider value={{ readPatientsData, addPatient, updatePatient, deletePatient, listByStatus, setStatus, setBreed, isToastOpen, setIsToastOpen, rowsPerPage, setRowsPerPage, query, setQuery }}>
       {children}
     </PatientContext.Provider>
   )
