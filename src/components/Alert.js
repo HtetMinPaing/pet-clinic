@@ -15,15 +15,6 @@ const Alert = ({ isAlertDeleteOpen, setIsAlertDeleteOpen, id }) => {
         setIsAlertDeleteOpen(false)
     }
 
-    // useEffect(() => {
-    //     console.log('Confimed Delete:', confimeDelete.patientId);
-    //     console.log('Patient ID:', id);
-    //     if (confimeDelete.isSure && confimeDelete.patientId === id) {
-    //         deletePatient(confimeDelete.patientId);  // Delete the specific patient from localStorage
-    //         setConfimeDelete({ isOpen: false, isSure: false, patientId: null });  // Reset confirmation state
-    //     }
-    // }, [confimeDelete, deletePatient, setConfimeDelete]);
-
     return (
         <div className="fixed top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-7 p-7 w-[480px] bg-[#ffffff] rounded-lg shadow-lg" role="alert">
             <div className="ralative">

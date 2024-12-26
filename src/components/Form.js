@@ -42,11 +42,11 @@ const Form = ({ setisModalOpen, data, type }) => {
     }
 
     return (
-        <form onSubmit={e => handleSubmit(e)} class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-[#ffffff] shadow-lg p-10">
+        <form onSubmit={e => handleSubmit(e)} class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-[#ffffff] shadow-lg p-5 md:p-10">
             <h1 className="text-[#54BAB9] font-medium text-[18px] text-center mb-3">{type === "add" ? "Add new " : "Update "} patient</h1>
             <p className="text-[#444444] font-normal text-[12px] text-center mb-5">Enter new patient information below</p>
-            <div className="flex flex-wrap w-[500px] items-center justify-center gap-x-5">
-                <div className="mb-5">
+            <div className="flex flex-wrap min-w-[300px] max-w-[500px] items-center justify-center gap-x-5">
+                <div className="mb-1 md:mb-5">
                     <label for="petName" className="block text-[#444444] text-[12px]">Pet Name</label>
                     <input
                         type="text"
@@ -59,7 +59,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         required
                     />
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="status" className="block text-[#444444] text-[12px]">Status</label>
                     <select
                         id="status"
@@ -74,7 +74,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         <option value="picky_eater">Picky Eater</option>
                     </select>
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="pawrent" className="block text-[#444444] text-[12px]">Pawrent</label>
                     <input
                         type="text"
@@ -87,7 +87,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         required
                     />
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="breed" className="block text-[#444444] text-[12px]">Breed</label>
                     <select
                         id="breed"
@@ -103,7 +103,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         ))}
                     </select>
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="gender" className="block text-[#444444] text-[12px]">Gender</label>
                     <div className='flex items-center gap-2.5 w-60 p-2.5'>
                         <div className="flex items-center">
@@ -116,7 +116,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         </div>
                     </div>
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="dateOfBirth" className="block text-[#444444] text-[12px]">Date of Birth</label>
                     <input
                         type="date"
@@ -128,7 +128,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         required
                     />
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="contactPhone" className="block text-[#444444] text-[12px]">Contact Phone No.</label>
                     <input
                         type="text"
@@ -141,7 +141,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         required
                     />
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="address" className="block text-[#444444] text-[12px]">Address</label>
                     <input
                         type="address"
@@ -154,7 +154,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         required
                     />
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="city" className="block text-[#444444] text-[12px]">City</label>
                     <select
                         id="city"
@@ -169,7 +169,7 @@ const Form = ({ setisModalOpen, data, type }) => {
                         <option value="Mandalay">Mandalay</option>
                     </select>
                 </div>
-                <div className="mb-5">
+                <div className="mb-1 md:mb-5">
                     <label for="township" className="block text-[#444444] text-[12px]">Township</label>
                     <select
                         id="township"
@@ -187,8 +187,8 @@ const Form = ({ setisModalOpen, data, type }) => {
                         }
                     </select>
                 </div>
-                <button type="submit"  className={`w-44 text-[#ffffff] ${type === "add" ? "bg-[#54BAB9]" : "bg-[#EDC339]"} ${type === "add" ? "hover:bg-[#5acdcb]" : "hover:bg-[#fbd044]"} rounded-md focus:outline-none text-[14px] px-5 py-2.5 text-center`}>{type === "add" ? "Save" : "Update"}</button>
-                <button type="button" onClick={() => setisModalOpen(false)} className="w-44 text-[#000000] hover:border-gray-600 rounded-md border border-gray-400 text-[14px] px-5 py-2.5 text-center">Cancel</button>
+                <button type="submit"  className={`w-28 md:w-44 mt-2 text-[#ffffff] ${type === "add" ? "bg-[#54BAB9]" : "bg-[#EDC339]"} ${type === "add" ? "hover:bg-[#5acdcb]" : "hover:bg-[#fbd044]"} rounded-md focus:outline-none text-[14px] px-5 py-2.5 text-center`}>{type === "add" ? "Save" : "Update"}</button>
+                <button type="button" onClick={() => setisModalOpen(false)} className="w-28 md:w-44 mt-2 text-[#000000] hover:border-gray-600 rounded-md border border-gray-400 text-[14px] px-5 py-2.5 text-center">Cancel</button>
             </div>
         </form>
     )
