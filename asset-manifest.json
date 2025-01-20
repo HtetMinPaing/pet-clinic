@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pet-clinic/static/css/main.b2782358.css",
+    "main.js": "/pet-clinic/static/js/main.d596cbb0.js",
+    "static/js/488.f074a9f6.chunk.js": "/pet-clinic/static/js/488.f074a9f6.chunk.js",
+    "index.html": "/pet-clinic/index.html",
+    "main.b2782358.css.map": "/pet-clinic/static/css/main.b2782358.css.map",
+    "main.d596cbb0.js.map": "/pet-clinic/static/js/main.d596cbb0.js.map",
+    "488.f074a9f6.chunk.js.map": "/pet-clinic/static/js/488.f074a9f6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2782358.css",
+    "static/js/main.d596cbb0.js"
+  ]
+}
